@@ -42,7 +42,6 @@ def blog_create():
 
 @app.route('/blog/<int:id>/delete/')
 def blog_delete(id):
-
     blog = Blog.query.get(id)
 
     db.session.delete(blog)
@@ -53,16 +52,13 @@ def blog_delete(id):
 
 @app.route('/blog/<int:id>/update/', methods=['GET', 'POST'])
 def blog_update(id):
-
     blog = Blog.query.get_or_404(id)
 
     if request.method == 'POST':
-
         blog.title = request.form.get('title')
         blog.text = request.form.get('text')
 
         db.session.commit()
-
         return redirect('/')
 
     return render_template('update_blog.html', blog=blog)
@@ -72,4 +68,4 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()
     app.run(debug=True)
-
+    
