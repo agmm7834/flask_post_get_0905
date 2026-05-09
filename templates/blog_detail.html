@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloglar sahifasi</title>
+</head>
+<body>
+    <h1> {{ blog.title }} </h1>
+    <h3> {{ blog.created_at }} </h3>
+
+    <p>
+        {{ blog.text }}
+    </p>
+          
+    <h2>
+        <a href="{{ url_for('blog_list') }}">Barcha Bloglar</a>
+    </h2>
+    
+    <h3>
+        <a href="{{ url_for('blog_delete', id=blog.id) }}">Blog O'chirish</a>
+    </h3>
+
+    <h3>
+        <a href="{{ url_for('blog_update', id=blog.id) }}">Yangilash uchun</a>
+    </h3>
+
+</body>
+</html>

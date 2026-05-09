@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yangilash</title>
+</head>
+<body>
+    <form method="POST">
+
+        <div>
+            <label>Title</label>
+            <input type="text" name="title" value="{{ blog.title }}">
+        </div>
+    
+        <div>
+            <label>Text</label>
+            <textarea name="text">{{ blog.text }}</textarea>
+        </div>
+    
+        <button type="submit">Yangilash</button>
+    
+    </form>
+</body>
+</html>

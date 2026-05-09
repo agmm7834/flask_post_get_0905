@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloglar sahifasi</title>
+</head>
+<body>
+    <h1>Barcha Bloglar</h1>
+
+    <ul>
+        {% for blog in bloglar %}
+            <li> 
+                <a href="{{ url_for('blog_detail', id=blog.id) }}"> {{ blog.title }} </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h2>
+        <a href="{{ url_for('blog_create') }}">Yangi post</a>
+    </h2>
+    
+</body>
+</html>
